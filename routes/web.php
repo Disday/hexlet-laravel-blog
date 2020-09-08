@@ -14,15 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.welcome');
 });
-Route::get('/about', function () {
-    $team = [
-        ['name' => 'Dima', 'position' => 'CTO'],
-        ['name' => 'Katya', 'position' => 'CEO']
-    ];
-    return view('about', ['team' => $team]);
-});
+
+Route::get('/about', 'PageController@about');
+Route::get('/rating', 'RatingController@index');
+
 Route::get('/articles', function () {
-    return view('articles');
+    $articles = App\Article::all();
+    return view('page.articles', ['articles' => $articles]);
 });
