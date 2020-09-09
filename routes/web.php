@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('page.welcome');
 });
 
-Route::get('/about', 'PageController@about');
-Route::get('/rating', 'RatingController@index');
+Route::get('/about', 'PageController@about')
+->name('about');
 
-Route::get('/articles', function () {
-    $articles = App\Article::all();
-    return view('page.articles', ['articles' => $articles]);
-});
+Route::get('/rating', 'RatingController@index')
+    ->name('rating.index');
+
+Route::get('/articles', 'ArticleController@index')
+    ->name('article.index');
+
+Route::get('/article_categories', 'ArticleCategoryController@index')
+    ->name('article_categories.index');

@@ -14,9 +14,10 @@
 <body>
     <div class="container mt-4">
         <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/articles">Articles</a>
-        <a href="/rating">Rating</a>
+        <a href={{ route('about') }}>About</a>
+        <a href={{ route('article.index') }}>Articles</a>
+        <a href={{ route('rating.index') }}>Rating</a>
+        <a href={{ route('article_categories.index') }}>Article categories</a>
         <h1>@yield('header')</h1>
         <div>
             @yield('content')
