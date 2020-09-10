@@ -14,7 +14,9 @@
     <tbody>
         @foreach ($articleCategories as $articleCategory)
         <tr>
-            <td>{{ $articleCategory->name}}</td>
+            <td>
+            <a href="{{ route('article_categories.show', $articleCategory->id) }}">{{ $articleCategory->name}}</a>
+            </td>
             <td>{{ Str::limit($articleCategory->description, 20)}}</td>
         </tr>
         @endforeach

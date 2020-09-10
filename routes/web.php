@@ -26,5 +26,11 @@ Route::get('/rating', 'RatingController@index')
 Route::get('/articles', 'ArticleController@index')
     ->name('article.index');
 
+Route::get('/article/{id}', 'ArticleController@show')
+    ->name('articles.show');
+
 Route::get('/article_categories', 'ArticleCategoryController@index')
     ->name('article_categories.index');
+
+Route::get('/article_categories/{id}', 'ArticleCategoryController@show')
+    ->name('article_categories.show');

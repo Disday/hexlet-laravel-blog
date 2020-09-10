@@ -6,6 +6,7 @@
 
 @section ('content')
 
+
 <table>
     <!-- <th>ID</th> -->
     <th>Title</th>
@@ -15,7 +16,7 @@
         @foreach ($articles as $article)
         <tr>
             <!-- <td>{{ $article->id}}</td> -->
-            <td>{{ $article->name}}</td>
+            <td><a href="{{ route('articles.show', $article->id) }}">{{ $article->name}}</a></td>
             <td>{{ Str::limit($article->body, 20)}}</td>
             <!-- <td>{{ $article->likes_count}}</td> -->
         </tr>
