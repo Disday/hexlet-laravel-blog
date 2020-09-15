@@ -6,6 +6,12 @@
 
 @section ('content')
 
+@if(Session::has('message'))
+<div style='margin-bottom:20px; color:green;'>{{ Session::get('message')}}</div>
+@endif
+
+<a href="{{ route('article_categories.create')}}">Create category</a>
+
 <table>
     <!-- <th>ID</th> -->
     <th>Title</th>

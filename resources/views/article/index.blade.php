@@ -5,8 +5,18 @@
 @endsection
 
 @section ('content')
+@if(Session::has('message'))
+<div style='margin-bottom:20px; color:green;'>{{ Session::get('message')}}</div>
+@endif
 
+<a href='{{ route("article.create") }}' style='margin-bottom:20px;'>Create new article</a>
 
+{{ Form::open(['url' => route('article.index'), 'method' => 'GET'])}}
+<!-- {{ Form::label('q', 'search')}} -->
+{{ Form::text('q' , $query, ['class' => 'form-control'])}}
+{{ Form::submit('search')}}
+{{ Form::close()}}
+<br>
 <table>
     <!-- <th>ID</th> -->
     <th>Title</th>

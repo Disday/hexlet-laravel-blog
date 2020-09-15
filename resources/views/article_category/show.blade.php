@@ -9,6 +9,7 @@
 <table>
     <th>Category</th>
     <th>Description</th>
+    <th>Sta</th>
     <tbody>
         <tr>
             <td>
@@ -16,6 +17,9 @@
             </td>
             <td>
                 {{ $category->description}}
+            </td>
+            <td>
+                {{ $category->state}}
             </td>
         </tr>
     </tbody>

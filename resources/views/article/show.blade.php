@@ -18,9 +18,11 @@
         <tr>
             <td>{{ $article->name}}</td>
             <td>{{ Str::limit($article->body, 20)}}</td>
+            @if (isset($article->category))
             <td>
-            <a href="{{ route('article_categories.show', $article->category) }}">{{$article->category->name}}</a>
+                <a href="{{ route('article_categories.show', $article->category) }}">{{$article->category->name}}</a>
             </td>
+            @endif
         </tr>
     </tbody>
 </table>
