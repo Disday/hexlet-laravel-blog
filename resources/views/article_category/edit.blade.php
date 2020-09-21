@@ -1,14 +1,15 @@
 @extends ('layouts.app')
 
 @section ('header')
-<p>Create category</p>
+<p>Edit category</p>
 @endsection
 
 @section ('content')
 
-{{ Form::model($category, ['url' => route('article_categories.store')]) }}
+{{ Form::model($category, ['url' => route('article_categories.update', $category->id),
+    'method' => 'PATCH']) }}
 @include('article_category.form')
-{{ Form::submit('Create category')}}
+{{ Form::submit('Save')}}
 {{ Form::close()}}
 
 @if ($errors)

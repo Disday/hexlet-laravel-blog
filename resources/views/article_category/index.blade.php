@@ -24,6 +24,15 @@
             <a href="{{ route('article_categories.show', $articleCategory->id) }}">{{ $articleCategory->name}}</a>
             </td>
             <td>{{ Str::limit($articleCategory->description, 20)}}</td>
+            <td>
+            <a href="{{ route('article_categories.edit', $articleCategory->id) }}">edit</a>
+            </td>
+            <td>
+                {{ Form::open(['url' => route('article_categories.delete', $articleCategory->id), 'method' => 'DELETE'])}}
+                {{ Form::submit('delete', ['onclick' => "return confirm('Are you sure?')"])}}
+                {{ Form::close()}}
+
+            </td>
         </tr>
         @endforeach
     </tbody>

@@ -6,10 +6,6 @@
 
 @section ('content')
 
-<!-- {{ Form::model($article, ['url' => route('article.index')]) }}
-{{ Form::text('name', 'name')}}
-{{ Form::close()}} -->
-
 <table>
     <th>Title</th>
     <th>Body</th>

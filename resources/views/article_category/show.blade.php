@@ -9,7 +9,7 @@
 <table>
     <th>Category</th>
     <th>Description</th>
-    <th>Sta</th>
+    <th>State</th>
     <tbody>
         <tr>
             <td>
